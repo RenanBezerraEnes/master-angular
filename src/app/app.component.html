@@ -1,8 +1,8 @@
 <div class="row">
-  <app-header></app-header>
+  <app-header (featureSelected)="onNavigate($event)"></app-header>
   <div class="col-md-5">
-    <app-recipe-list></app-recipe-list>
-    <app-shopping-list></app-shopping-list>
+    <app-recipe-list *ngIf="loadedFeature === 'recipe'"></app-recipe-list>
+    <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
   </div>
   <div class="col-md-7">
     <app-detail-list></app-detail-list>
